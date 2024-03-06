@@ -30,4 +30,13 @@ public class PaddleHandler : MonoBehaviour
             paddles[1].transform.position += Vector3.down/10;
         }
     }
+
+    public void ResetPaddles()
+    {
+        foreach (var paddle in paddles)
+        {
+            var position = paddle.transform.position;
+            paddle.transform.position = new Vector3(position.x, 0, position.z);
+        }
+    }
 }
